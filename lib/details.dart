@@ -20,6 +20,16 @@ class _DetailsPageState extends State<DetailsPage> {
         title: Text(
           widget.title,
         ),
+        automaticallyImplyLeading: false,
+        leading: GestureDetector(
+          child: const Icon(
+            Icons.arrow_back_ios,
+          ),
+          onTap: () {
+            Navigator.of(context).pop(context);
+          },
+        ),
+        centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
       ),

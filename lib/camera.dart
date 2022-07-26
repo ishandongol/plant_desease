@@ -55,9 +55,6 @@ class _CameraPageState extends State<CameraPage> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    final deviceRatio = size.width / size.height;
-
     if (!controller.value.isInitialized) {
       return const SizedBox(
         child: Center(
@@ -65,21 +62,23 @@ class _CameraPageState extends State<CameraPage> {
         ),
       );
     }
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the DetailsPage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(
-          widget.title,
-        ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
-      body: Container(
-        padding: EdgeInsets.zero,
-        width: double.infinity,
-        child: CameraPreview(controller),
-      ),
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        CameraPreview(controller),
+        Container(
+          alignment: Alignment.bottomCenter,
+          padding: const EdgeInsets.all(8.0),
+          child: MaterialButton(
+            onPressed: widget.updateRoute,
+            padding: const EdgeInsets.all(16.0),
+            color: const Color.fromARGB(106, 0, 0, 0),
+            textColor: Colors.white,
+            shape: const CircleBorder(),
+            child: const Icon(Icons.center_focus_weak_rounded),
+          ),
+        )
+      ],
     );
   }
 
