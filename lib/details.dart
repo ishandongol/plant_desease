@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cupertino_tabbar/cupertino_tabbar.dart' as CupertinoTabBar;
+import 'package:plant_disease/widgets/description.dart';
 
 class DetailsPage extends StatefulWidget {
   static const valueKey = ValueKey("DetailsPage");
@@ -133,7 +134,22 @@ class _DetailsPageState extends State<DetailsPage> {
                         animateWhenScrollable: false,
                         borderRadius: BorderRadius.circular(100),
                       ),
-                    )
+                    ),
+                    currentTab == 0
+                        ? const Description(
+                            title: "Identified Disease",
+                            description:
+                                """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.""",
+                          )
+                        : const Description(
+                            title: "Recommended Remedy",
+                            description:
+                                """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.""",
+                          ),
                   ],
                 ),
               );
