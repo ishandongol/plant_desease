@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cupertino_tabbar/cupertino_tabbar.dart' as CupertinoTabBar;
 
 class DetailsPage extends StatefulWidget {
   static const valueKey = ValueKey("DetailsPage");
@@ -11,6 +12,9 @@ class DetailsPage extends StatefulWidget {
 }
 
 class _DetailsPageState extends State<DetailsPage> {
+  int currentTab = 0;
+  int currentTabGetter() => currentTab;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,14 +47,94 @@ class _DetailsPageState extends State<DetailsPage> {
             ),
             DraggableScrollableSheet(builder:
                 (BuildContext context, ScrollController scrollController) {
-              return Container(
+              return Card(
                 color: Colors.white,
-                child: ListView.builder(
+                margin: EdgeInsets.zero,
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(8),
+                      topRight: Radius.circular(8)),
+                ),
+                child: ListView(
                   controller: scrollController,
-                  itemCount: 25,
-                  itemBuilder: (BuildContext context, int index) {
-                    return ListTile(title: Text('Item $index'));
-                  },
+                  padding: const EdgeInsets.all(16.0),
+                  children: [
+                    const Text(
+                      "The picture captured is of",
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontFamily: "Poppins-Bold",
+                          color: Color.fromARGB(255, 130, 130, 130)),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.only(top: 8.0, bottom: 3.0),
+                      child: const Text(
+                        "Strawberry",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: "Poppins-Bold",
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black),
+                      ),
+                    ),
+                    Container(
+                      alignment: Alignment.topLeft,
+                      child: const Chip(
+                        avatar: null,
+                        backgroundColor: Color.fromARGB(255, 112, 112, 112),
+                        label: Text(
+                          'Rosaceae',
+                          style: TextStyle(color: Colors.white, fontSize: 12),
+                        ),
+                      ),
+                    ),
+                    const Text(
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    const Divider(),
+                    Container(
+                      alignment: Alignment.topLeft,
+                      child: CupertinoTabBar.CupertinoTabBar(
+                        Colors.white,
+                        const Color.fromARGB(255, 224, 224, 224),
+                        [
+                          Text(
+                            "Disease",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: "Poppins-Bold",
+                                fontSize: 12,
+                                fontWeight:
+                                    currentTab == 0 ? FontWeight.w800 : null),
+                            textAlign: TextAlign.center,
+                          ),
+                          Text(
+                            "Remedy",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: "Poppins-Bold",
+                                fontSize: 12,
+                                fontWeight:
+                                    currentTab == 1 ? FontWeight.w800 : null),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                        currentTabGetter,
+                        (int index) {
+                          setState(() {
+                            currentTab = index;
+                          });
+                        },
+                        useSeparators: false,
+                        allowScrollable: false,
+                        fittedWhenScrollable: true,
+                        useShadow: false,
+                        animateWhenScrollable: false,
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                    )
+                  ],
                 ),
               );
             })
