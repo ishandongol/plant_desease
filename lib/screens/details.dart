@@ -8,9 +8,12 @@ import 'package:plant_disease/configs/appcolors.dart';
 import 'widgets/description.dart';
 
 class DetailsPage extends StatefulWidget {
-  XFile file;
+  final XFile file;
 
-  DetailsPage(this.file);
+  const DetailsPage(
+    this.file, {
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<DetailsPage> createState() => _DetailsPageState();
@@ -40,40 +43,30 @@ class _DetailsPageState extends State<DetailsPage> {
             Navigator.of(context).pop(context);
           },
         ),
-        centerTitle: true,
-        backgroundColor: Colors.white,
         elevation: 0,
       ),
       body: SizedBox.expand(
         child: Stack(
           children: [
-            Container(
-              margin: EdgeInsets.only(bottom: 200),
+            Image.file(
+              File(widget.file.path),
+              fit: BoxFit.cover,
               width: double.infinity,
-              child: Image.file(
-                File(widget.file.path),
-                fit: BoxFit.cover,
-                height: double.infinity,
-              ),
+              height: double.infinity,
             ),
-            DraggableScrollableSheet(builder:
-                (BuildContext context, ScrollController scrollController) {
-              return Card(
-                color: Colors.white,
-                margin: EdgeInsets.zero,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(18),
-                      topRight: Radius.circular(18)),
-                ),
-                child: Column(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(6),
-                      child: const Icon(Icons.drag_handle_outlined),
+            DraggableScrollableSheet(
+                initialChildSize: 0.25,
+                builder:
+                    (BuildContext context, ScrollController scrollController) {
+                  return Card(
+                    color: Colors.white,
+                    margin: EdgeInsets.zero,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(18),
+                          topRight: Radius.circular(18)),
                     ),
-                    Expanded(
-                        child: ListView(
+                    child: ListView(
                       controller: scrollController,
                       padding: const EdgeInsets.all(16.0),
                       children: [
@@ -171,11 +164,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sa
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.""",
                               ),
                       ],
-                    ))
-                  ],
-                ),
-              );
-            })
+                    ),
+                  );
+                })
           ],
         ),
       ),

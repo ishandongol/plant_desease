@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
+import 'package:plant_disease/configs/appcolors.dart';
 import 'package:plant_disease/routes/Routes.dart';
 
 class CameraPage extends StatefulWidget {
@@ -98,18 +99,24 @@ class _CameraPageState extends State<CameraPage> {
         CameraPreview(controller),
         Container(
           alignment: Alignment.bottomCenter,
-          padding: const EdgeInsets.all(8.0),
-          child: MaterialButton(
-            onPressed: () {
-              if (controller.value.isInitialized) {
-                onTakePictureButtonPressed();
-              }
-            },
-            padding: const EdgeInsets.all(16.0),
-            color: const Color.fromARGB(106, 0, 0, 0),
-            textColor: Colors.white,
-            shape: const CircleBorder(),
-            child: const Icon(Icons.center_focus_weak_rounded),
+          child: Container(
+            color: AppColors.transparent,
+            width: double.infinity,
+            padding: const EdgeInsets.all(32),
+            height: 150,
+            child: MaterialButton(
+              onPressed: () {
+                if (controller.value.isInitialized) {
+                  onTakePictureButtonPressed();
+                }
+              },
+              padding: const EdgeInsets.all(16.0),
+              height: 50,
+              color: const Color.fromARGB(106, 0, 0, 0),
+              textColor: Colors.white,
+              shape: const CircleBorder(),
+              child: const Icon(Icons.center_focus_weak_rounded),
+            ),
           ),
         )
       ],
@@ -124,7 +131,7 @@ class _CameraPageState extends State<CameraPage> {
       });
     }
     if (file != null) {
-      Routes().navigateToDetailsScreen(context,file);
+      Routes().navigateToDetailsScreen(context, file);
       // showInSnackBar('Picture saved to ${file.path}');
     }
   }

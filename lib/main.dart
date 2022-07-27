@@ -2,7 +2,6 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:plant_disease/screens/camera.dart';
 import 'package:plant_disease/configs/apptheme.dart';
-import 'package:plant_disease/screens/details.dart';
 
 late List<CameraDescription> _cameras;
 
