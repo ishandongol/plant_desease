@@ -1,7 +1,8 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:plant_disease/camera.dart';
-import 'package:plant_disease/details.dart';
+import 'package:plant_disease/screens/camera.dart';
+import 'package:plant_disease/configs/apptheme.dart';
+import 'package:plant_disease/screens/details.dart';
 
 late List<CameraDescription> _cameras;
 
@@ -19,46 +20,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  ValueKey? _currentRoute = CameraPage.valueKey;
-
-  void _setCurrentRoute(ValueKey? valueKey) {
-    setState(() {
-      _currentRoute = valueKey;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Plant Disease',
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(
-            iconTheme: const IconThemeData(color: Colors.black),
-            titleTextStyle: Theme.of(context)
-                .textTheme
-                .titleLarge!
-                .copyWith(fontWeight: FontWeight.bold, fontFamily: 'Poppins')),
-        fontFamily: "Poppins",
-        primarySwatch: Colors.blue,
-      ),
-      home: Navigator(
-        pages: [
-          MaterialPage(
-              child: CameraPage(
-                title: 'Camera',
-                updateRoute: () {
-                  _setCurrentRoute(DetailsPage.valueKey);
-                },
-                cameras: _cameras,
-              ),
-              key: CameraPage.valueKey),
-          if (_currentRoute == DetailsPage.valueKey)
-            const MaterialPage(child: DetailsPage(title: "Details"))
-        ],
-        onPopPage: ((route, result) {
-          _setCurrentRoute(null);
-          return route.didPop(result);
-        }),
+      theme: appTheme,
+      home: CameraPage(
+        title: "Camera",
+        cameras: _cameras,
+        updateRoute: () {},
       ),
     );
   }
