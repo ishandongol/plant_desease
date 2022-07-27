@@ -53,8 +53,8 @@ class _DetailsPageState extends State<DetailsPage> {
                 margin: EdgeInsets.zero,
                 shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(8),
-                      topRight: Radius.circular(8)),
+                      topLeft: Radius.circular(18),
+                      topRight: Radius.circular(18)),
                 ),
                 child: ListView(
                   controller: scrollController,
