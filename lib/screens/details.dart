@@ -1,12 +1,16 @@
+import 'dart:io';
+
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:cupertino_tabbar/cupertino_tabbar.dart' as CupertinoTabBar;
-import 'package:plant_disease/widgets/description.dart';
+import 'package:plant_disease/configs/appcolors.dart';
+
+import 'widgets/description.dart';
 
 class DetailsPage extends StatefulWidget {
-  static const valueKey = ValueKey("DetailsPage");
-  const DetailsPage({Key? key, required this.title}) : super(key: key);
+  XFile file;
 
-  final String title;
+  DetailsPage(this.file);
 
   @override
   State<DetailsPage> createState() => _DetailsPageState();
@@ -14,6 +18,7 @@ class DetailsPage extends StatefulWidget {
 
 class _DetailsPageState extends State<DetailsPage> {
   int currentTab = 0;
+
   int currentTabGetter() => currentTab;
 
   @override
@@ -22,8 +27,9 @@ class _DetailsPageState extends State<DetailsPage> {
       appBar: AppBar(
         // Here we take the value from the DetailsPage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(
-          widget.title,
+        title: const Text(
+          'Details',
+          style: TextStyle(color: Colors.black),
         ),
         automaticallyImplyLeading: false,
         leading: GestureDetector(
@@ -41,10 +47,14 @@ class _DetailsPageState extends State<DetailsPage> {
       body: SizedBox.expand(
         child: Stack(
           children: [
-            Image.asset(
-              "images/test.jpeg",
-              fit: BoxFit.cover,
-              height: double.infinity,
+            Container(
+              margin: EdgeInsets.only(bottom: 200),
+              width: double.infinity,
+              child: Image.file(
+                File(widget.file.path),
+                fit: BoxFit.cover,
+                height: double.infinity,
+              ),
             ),
             DraggableScrollableSheet(builder:
                 (BuildContext context, ScrollController scrollController) {
@@ -67,12 +77,12 @@ class _DetailsPageState extends State<DetailsPage> {
                       controller: scrollController,
                       padding: const EdgeInsets.all(16.0),
                       children: [
-                        const Text(
+                        Text(
                           "The picture captured is of",
                           style: TextStyle(
                               fontSize: 14,
-                              fontFamily: "Poppins-Bold",
-                              color: Color.fromARGB(255, 130, 130, 130)),
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.lightgrey),
                         ),
                         Container(
                           padding: const EdgeInsets.only(top: 8.0, bottom: 3.0),
