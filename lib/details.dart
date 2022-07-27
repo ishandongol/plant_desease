@@ -56,100 +56,112 @@ class _DetailsPageState extends State<DetailsPage> {
                       topLeft: Radius.circular(18),
                       topRight: Radius.circular(18)),
                 ),
-                child: ListView(
-                  controller: scrollController,
-                  padding: const EdgeInsets.all(16.0),
+                child: Column(
                   children: [
-                    const Text(
-                      "The picture captured is of",
-                      style: TextStyle(
-                          fontSize: 14,
-                          fontFamily: "Poppins-Bold",
-                          color: Color.fromARGB(255, 130, 130, 130)),
-                    ),
                     Container(
-                      padding: const EdgeInsets.only(top: 8.0, bottom: 3.0),
-                      child: const Text(
-                        "Strawberry",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontFamily: "Poppins-Bold",
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black),
-                      ),
+                      padding: const EdgeInsets.all(6),
+                      child: const Icon(Icons.drag_handle_outlined),
                     ),
-                    Container(
-                      alignment: Alignment.topLeft,
-                      child: const Chip(
-                        avatar: null,
-                        backgroundColor: Color.fromARGB(255, 112, 112, 112),
-                        label: Text(
-                          'Rosaceae',
-                          style: TextStyle(color: Colors.white, fontSize: 12),
+                    Expanded(
+                        child: ListView(
+                      controller: scrollController,
+                      padding: const EdgeInsets.all(16.0),
+                      children: [
+                        const Text(
+                          "The picture captured is of",
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: "Poppins-Bold",
+                              color: Color.fromARGB(255, 130, 130, 130)),
                         ),
-                      ),
-                    ),
-                    const Text(
-                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    const Divider(),
-                    Container(
-                      alignment: Alignment.topLeft,
-                      child: CupertinoTabBar.CupertinoTabBar(
-                        Colors.white,
-                        const Color.fromARGB(255, 224, 224, 224),
-                        [
-                          Text(
-                            "Disease",
+                        Container(
+                          padding: const EdgeInsets.only(top: 8.0, bottom: 3.0),
+                          child: const Text(
+                            "Strawberry",
                             style: TextStyle(
-                                color: Colors.black,
+                                fontSize: 20,
                                 fontFamily: "Poppins-Bold",
-                                fontSize: 12,
-                                fontWeight:
-                                    currentTab == 0 ? FontWeight.w800 : null),
-                            textAlign: TextAlign.center,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
                           ),
-                          Text(
-                            "Remedy",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: "Poppins-Bold",
-                                fontSize: 12,
-                                fontWeight:
-                                    currentTab == 1 ? FontWeight.w800 : null),
-                            textAlign: TextAlign.center,
+                        ),
+                        Container(
+                          alignment: Alignment.topLeft,
+                          child: const Chip(
+                            avatar: null,
+                            backgroundColor: Color.fromARGB(255, 112, 112, 112),
+                            label: Text(
+                              'Rosaceae',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 12),
+                            ),
                           ),
-                        ],
-                        currentTabGetter,
-                        (int index) {
-                          setState(() {
-                            currentTab = index;
-                          });
-                        },
-                        useSeparators: false,
-                        allowScrollable: false,
-                        fittedWhenScrollable: true,
-                        useShadow: false,
-                        animateWhenScrollable: false,
-                        borderRadius: BorderRadius.circular(100),
-                      ),
-                    ),
-                    currentTab == 0
-                        ? const Description(
-                            title: "Identified Disease",
-                            description:
-                                """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.
+                        ),
+                        const Text(
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        const Divider(),
+                        Container(
+                          alignment: Alignment.topLeft,
+                          child: CupertinoTabBar.CupertinoTabBar(
+                            Colors.white,
+                            const Color.fromARGB(255, 224, 224, 224),
+                            [
+                              Text(
+                                "Disease",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: "Poppins-Bold",
+                                    fontSize: 12,
+                                    fontWeight: currentTab == 0
+                                        ? FontWeight.w800
+                                        : null),
+                                textAlign: TextAlign.center,
+                              ),
+                              Text(
+                                "Remedy",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: "Poppins-Bold",
+                                    fontSize: 12,
+                                    fontWeight: currentTab == 1
+                                        ? FontWeight.w800
+                                        : null),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                            currentTabGetter,
+                            (int index) {
+                              setState(() {
+                                currentTab = index;
+                              });
+                            },
+                            useSeparators: false,
+                            allowScrollable: false,
+                            fittedWhenScrollable: true,
+                            useShadow: false,
+                            animateWhenScrollable: false,
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                        ),
+                        currentTab == 0
+                            ? const Description(
+                                title: "Identified Disease",
+                                description:
+                                    """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.""",
-                          )
-                        : const Description(
-                            title: "Recommended Remedy",
-                            description:
-                                """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.
+                              )
+                            : const Description(
+                                title: "Recommended Remedy",
+                                description:
+                                    """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.""",
-                          ),
+                              ),
+                      ],
+                    ))
                   ],
                 ),
               );
