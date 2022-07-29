@@ -70,7 +70,7 @@ class _DetailsPageState extends State<DetailsPage> {
                       controller: scrollController,
                       padding: const EdgeInsets.all(16.0),
                       children: [
-                        Text(
+                        const Text(
                           "The picture captured is of",
                           style: TextStyle(
                               fontSize: 14,
@@ -80,7 +80,7 @@ class _DetailsPageState extends State<DetailsPage> {
                         Container(
                           padding: const EdgeInsets.only(top: 8.0, bottom: 3.0),
                           child: const Text(
-                            "Strawberry",
+                            "Lorem Ipsum",
                             style: TextStyle(
                                 fontSize: 20,
                                 fontFamily: "Poppins-Bold",
@@ -101,7 +101,7 @@ class _DetailsPageState extends State<DetailsPage> {
                           ),
                         ),
                         const Text(
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.",
+                          "Veterinarian blue berries cattle jelly canning. Forage Harvester rakes peacocks, squeal garden woof. Gourds utters at welding equipment a oink oink haybine. Garden windmill chicks.",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         const Divider(),
@@ -152,16 +152,20 @@ class _DetailsPageState extends State<DetailsPage> {
                             ? const Description(
                                 title: "Identified Disease",
                                 description:
-                                    """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.
+                                    """Farmers market and cultivator ostrich. Quack hammers eggplant is utters nails garden. Chainsaw foal hay hook, herbs at combine harvester, children is mallet. Garden windmill chicks, hen at corn in, lettus a peppers. Prairie dogs raccoons robins rats. Goose hammers cattle rats in crows. Goat goose hen horse. House hen chinchillas in barn livestock cat hogs chicks trucks. Forage Harvester rakes peacocks, squeal garden woof. Lamb in eggplant baler rain barrels manure hay rake. Grapes at yams mushroom.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.""",
+Organic berries gobble. Baa potato donkey mouse, at gate grain bins woof. Forage Harvester rakes peacocks, squeal garden woof. Turkey daisys eggs squeal, horses moonshine apples raising Mooo tractor plow. Garden windmill chicks, hen at corn in, lettus a peppers. Chainsaw foal hay hook, herbs at combine harvester, children is mallet. John Deere bees, parsley sweet corn at, porky pig shovels. Forage Harvester rakes peacocks, squeal garden woof.
+
+""",
                               )
                             : const Description(
                                 title: "Recommended Remedy",
                                 description:
-                                    """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.
+                                    """Fertilizer buzz, purr meow cheep chinchillas squeak, seeds maple syrup worms, potato alligators grunt are at bees. Mallet herbs basil nest, in welding equipment pens quail. House hen chinchillas in barn livestock cat hogs chicks trucks. Pick up truck livestock, pets and storage shed, troughs feed bale manure, is garden wheat oats at augers. Grapes at yams mushrooms organic berries gobble. Grapes nest pitch fork an plows maple syrup yearlings.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est urna aliquet nec sapien, non aliquam proin. Maecenas vel viverra adipiscing nec nisl sed et leo.""",
+Quilt squeak doggies. Garden windmill chicks, hen at corn in, lettus a peppers. Brussel sprouts cow, rabbits a gates a, storage she.
+
+Fences. Brussel sprouts cow, rabbits a gates a, storage shed fences. Outhouse at nails mower. Petting zoo at carrots alligators quack. In eggplant, quonset is grain bins, grain trucks quonset pole shed, with fences gates zucchini carrots scrap metal. Utters are weathervane foal est. John Deere bees, parsley sweet corn at, porky pig shovels. Sage mower goat, raccoons rhubarb outhouse a.""",
                               ),
                       ],
                     ),
