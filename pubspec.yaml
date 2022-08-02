@@ -32,6 +32,10 @@ dependencies:
   cupertino_icons: ^1.0.5
   camera: ^0.10.0
   cupertino_tabbar: ^2.0.0
+  tflite_flutter: ^0.9.0
+  tflite_flutter_helper: ^0.2.1
+  image: ^3.2.0
+  path_provider: ^2.0.11
 
 dev_dependencies:
   flutter_test:
@@ -45,7 +49,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/test.jpeg
+    - assets/
 
 
   fonts:
