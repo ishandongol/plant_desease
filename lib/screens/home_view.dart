@@ -28,29 +28,12 @@ class _HomeViewState extends State<HomeView> {
       key: scaffoldKey,
       backgroundColor: Colors.black,
       body: Stack(
-        children: <Widget>[
+        children: [
           // Camera View
           CameraView(resultsCallback, statsCallback),
 
           // Bounding boxes
           boundingBoxes(results),
-
-          // Heading
-          Align(
-            alignment: Alignment.topLeft,
-            child: Container(
-              padding: EdgeInsets.only(top: 20),
-              child: Text(
-                'Object Detection Flutter',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.deepOrangeAccent.withOpacity(0.6),
-                ),
-              ),
-            ),
-          ),
 
           // Bottom Sheet
           Align(

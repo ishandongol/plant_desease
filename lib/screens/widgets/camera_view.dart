@@ -17,9 +17,10 @@ class CameraView extends StatefulWidget {
   final Function(Stats stats) statsCallback;
 
   /// Constructor
-  const CameraView(this.resultsCallback, this.statsCallback, {Key? key});
+  const CameraView(this.resultsCallback, this.statsCallback, {Key? key})
+      : super(key: key);
   @override
-  _CameraViewState createState() => _CameraViewState();
+  State<CameraView> createState() => _CameraViewState();
 }
 
 class _CameraViewState extends State<CameraView> with WidgetsBindingObserver {
@@ -96,9 +97,11 @@ class _CameraViewState extends State<CameraView> with WidgetsBindingObserver {
       return Container();
     }
 
-    return AspectRatio(
-        aspectRatio: cameraController!.value.aspectRatio,
-        child: CameraPreview(cameraController!));
+    return CameraPreview(cameraController!);
+
+    // return AspectRatio(
+    //     aspectRatio: cameraController!.value.aspectRatio,
+    //     child: CameraPreview(cameraController!));
   }
 
   /// Callback to receive each frame [CameraImage] perform inference on it
